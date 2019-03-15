@@ -82,7 +82,6 @@
 }
 </style>
 <script type="text/javascript">
-console.clear();
 class Gamer {
   constructor(name) {
     this.name = name;
@@ -100,23 +99,16 @@ var app = new Vue({
     newMemberName: "",
     bustedPlayers: new Set()
   },
-  computed:{
-    getLowestScore: function(){
-      return this.lowestScore;
-    }
-  },
   methods: {
     addMember: function(event) {
       if(this.newMemberName === ''){
         return;
       }
-      console.log(this.newMemberName);
       this.gamers.push(new Gamer(this.newMemberName));
       this.newMemberName = "";
     },
     computeScores: function() {
       let scores = this.gamers.map(gamer => gamer.currentScore);
-      debugger;
       this.lowestScore = Math.min(...scores);
       this.gamers.forEach((gamer, index) => {
         if (!this.bustedPlayers.has(gamer.name)) {
@@ -125,12 +117,11 @@ var app = new Vue({
           gamer.currentScore = 0;
           if (gamer.totalScore > 100) {
             gamer.isBusted = true;
-            this.bustedPlayers.add(gamer.name);
+           this.bustedPlayers.add(gamer.name);
           }
         }
       });
-      this.lowestScore='';
-    }
+    },
   }
 });
 </script>
