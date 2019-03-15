@@ -13,7 +13,7 @@
 
 <div class="container-fluid" id="app">
   <div class="row">
-    <div class="col-sm-8">
+    <div class="col-xs-8">
       <div class="header">
         <h2>100 NOT OUT</h2>
       </div>
@@ -43,15 +43,15 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-4">
+    <div class="col-xs-4">
       <div class="header">
         <h3>Add Member</h3>
       </div>
       <div class="body">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-10">
+            <div class="col-xs-2"></div>
+            <div class="col-xs-10">
               <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="name" v-model="newMemberName" v-on:keyup.enter="addMember">
                 <div class="input-group-append">
@@ -71,11 +71,9 @@
 .col-name{
   background-color: #e9ecef;
 }
-
 .header{
   text-align: center;
 }
-
 .playerBusted{
   text-decoration: line-through;
   border: 1px solid red;
@@ -90,7 +88,6 @@ class Gamer {
     this.isBusted = false;
   }
 }
-
 var app = new Vue({
   el: "#app",
   data: {
@@ -126,4 +123,3 @@ var app = new Vue({
 });
 </script>
 </html>
-
