@@ -1,0 +1,51 @@
+<div class="container-fluid" id="app">
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="header">
+        <h3>Game Table</h3>
+      </div>
+      <div class="input-group mb-3">
+        <div class="form-control">{{getLowestScore}}</div>
+        <div class="input-group-append">
+          <button type="button" class="btn btn-secondary" v-on:click="computeScores" v-on:keyup.enter="computeScores">Calculate</button>
+        </div>
+      </div>
+      <div class="body container-fluid" id="gameTable">
+        <div class="row">
+          <div class="input-group">
+            <div class="form-control col-name">Player name</div>
+            <div class="form-control col-name">Total Score</div>
+            <div class="form-control col-name">Current round score</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="gamer-row input-group" v-for="gamer in gamers" v-bind:class="{ playerBusted: gamer.isBusted }">
+            <div class="gamer-name form-control">{{gamer.name}}</div>
+            <div class="total-score form-control">{{gamer.totalScore}}</div>
+              <input type="text" v-model="gamer.currentScore" class="form-control current-score" placeholder="current score" v-model="newMemberName">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="header">
+        <h3>Add Member</h3>
+      </div>
+      <div class="body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-10">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="name" aria-label="Recipient's username" aria-describedby="basic-addon2" v-model="newMemberName">
+                <div class="input-group-append">
+                  <button type="button" class="btn btn-secondary" v-on:click="addMember" v-on:keyup.enter="addMember">Add</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
