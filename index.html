@@ -38,7 +38,7 @@
           <div class="gamer-row input-group" v-for="gamer in gamers" v-bind:class="{ playerBusted: gamer.isBusted }">
             <div class="gamer-name form-control">{{gamer.name}}</div>
             <div class="total-score form-control">{{gamer.totalScore}}</div>
-              <input type="text" v-model="gamer.currentScore" class="form-control current-score" placeholder="currentscore">
+              <input type="text" v-model="gamer.currentScore" class="form-control current-score" placeholder="score">
           </div>
         </div>
       </div>
