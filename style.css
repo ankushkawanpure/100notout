@@ -1,0 +1,12 @@
+.col-name{
+  background-color: #e9ecef;
+}
+
+.header{
+  text-align: center;
+}
+
+.playerBusted{
+  text-decoration: line-through;
+  border: 1px solid red;
+}
