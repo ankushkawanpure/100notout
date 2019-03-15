@@ -111,7 +111,7 @@ var app = new Vue({
         if (!this.bustedPlayers.has(gamer.name)) {
           gamer.totalScore =
             gamer.totalScore + parseInt(gamer.currentScore) - this.lowestScore;
-          gamer.currentScore = 0;
+          gamer.currentScore = "";
           if (gamer.totalScore > 100) {
             gamer.isBusted = true;
            this.bustedPlayers.add(gamer.name);
